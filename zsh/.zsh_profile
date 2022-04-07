@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+export DOTFILES=$HOME/.dotfiles
+
+PERSONAL=$HOME/.config/personal
+
+# provides fuctionalities for environment 
+# addToPath - add new environment variables to PATH
+source $PERSONAL/env
+
+# Aliases go here
+source $PERSONAL/aliases
+
+export GOPATH=$HOME/go
+
+
+addToPath $HOME/.local/go/bin

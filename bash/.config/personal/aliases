@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+alias personal="cd ~/.config/personal"
+alias devgo="cd ~/devenv/go"
+alias devnode="cd ~/devenv/node"
+alias szshrc="source ~/.zshrc && echo '.zshrc successfully sourced.'"
+alias config="nvim ~/.config/nvim/lua"
