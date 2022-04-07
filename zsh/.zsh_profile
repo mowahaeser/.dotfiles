@@ -16,3 +16,4 @@ export GOPATH=$HOME/go
 
 addToPath $HOME/.local/go/bin
 addToPath $HOME/usr/local/bin
+addToPath $HOME/.local/bin

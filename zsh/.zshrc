@@ -1,5 +1,5 @@
 source $HOME/.zsh_profile
-# export GOPATH=$HOME/devenv/go
+export GOPATH=$HOME/devenv/go
 
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:/usr/local/go/bin:$(go env GOPATH)/bin:$PATH
