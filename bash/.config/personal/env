@@ -2,8 +2,3 @@
 
 export STOW_FOLDERS="nvim,bash,zsh"
 
-addToPath() {
-    if [[ $PATH != *"$1"* ]]; then
-        export PATH=$PATH:$i
-    fi
-}

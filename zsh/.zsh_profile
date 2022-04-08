@@ -1,18 +1,17 @@
 #!/usr/bin/env zsh
 
+export GOPATH=$HOME/devenv/go
 export DOTFILES=$HOME/.dotfiles
 
 PERSONAL=$HOME/.config/personal
 
-# provides fuctionalities for environment 
-# addToPath - add new environment variables to PATH
 source $PERSONAL/env
-
-# Aliases go here
 source $PERSONAL/aliases
 
-export GOPATH=$HOME/devenv/go
+# go
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 
-addToPath $HOME/.local/go/bin
-addToPath $HOME/usr/local/bin
-addToPath $HOME/.local/bin
+# rust
+export PATH=$PATH:$HOME/.cargo/bin
+
