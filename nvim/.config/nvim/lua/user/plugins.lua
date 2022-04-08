@@ -30,4 +30,6 @@ return packer.startup(function(use)
 
     use "rcarriga/nvim-notify"
 	use "folke/tokyonight.nvim"
+
+    use "tpope/vim-fugitive"
 end)
