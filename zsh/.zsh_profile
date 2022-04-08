@@ -11,8 +11,7 @@ source $PERSONAL/env
 # Aliases go here
 source $PERSONAL/aliases
 
-export GOPATH=$HOME/go
-
+export GOPATH=$HOME/devenv/go
 
 addToPath $HOME/.local/go/bin
 addToPath $HOME/usr/local/bin

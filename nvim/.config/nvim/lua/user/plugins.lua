@@ -10,7 +10,7 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope.nvim"
     use "nvim-treesitter/nvim-treesitter"
     use "nvim-lua/plenary.nvim"
-    use 'nvim-lua/popup.nvim'
+    use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-fzf-native.nvim"
 
     use "neovim/nvim-lspconfig"
@@ -20,6 +20,9 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-cmdline"
     use "hrsh7th/nvim-cmp"
+
+    use "vim-airline/vim-airline"
+    use "vim-airline/vim-airline-themes"
 
     use "rcarriga/nvim-notify"
 	use "folke/tokyonight.nvim"
