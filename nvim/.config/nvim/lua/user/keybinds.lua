@@ -3,9 +3,9 @@ local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
--- Remap comma as leader key
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

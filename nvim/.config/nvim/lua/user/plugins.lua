@@ -12,9 +12,10 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-fzf-native.nvim"
+    use "nvim-telescope/telescope-file-browser.nvim"
 
     use "neovim/nvim-lspconfig"
-
+    use "williamboman/nvim-lsp-installer"
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"

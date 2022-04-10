@@ -10,8 +10,9 @@ source $PERSONAL/aliases
 
 # go
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$GOPATH/bin
 
 # rust
 export PATH=$PATH:$HOME/.cargo/bin
 
+# it's not being found automatically somehow
+export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin
