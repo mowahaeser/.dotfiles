@@ -3,9 +3,9 @@ local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.api.nvim_set_keymap('', '<space>', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = '<space>'
+vim.g.maplocalleader = '<space>'
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -23,8 +23,8 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>", opts)
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>", opts)
 
 -- <gv | >gv for identing multiple lines
 
