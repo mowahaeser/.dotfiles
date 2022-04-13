@@ -9,7 +9,12 @@ local map_options = {
 }
 
 local on_attach = function(client, bufnr)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'tf', '<cmd>Telescope find_files<CR>', map_options)
+    require "lsp_signature".on_attach({
+            bind = true, -- This is mandatory, otherwise border config won't get registered.
+            handler_opts = {
+            border = "rounded"
+        }
+    }, bufnr)
 end
 
 

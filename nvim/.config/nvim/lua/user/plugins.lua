@@ -18,5 +18,7 @@ packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp-document-symbol"
     use "hrsh7th/cmp-cmdline"
     use "hrsh7th/nvim-cmp"
+
+    use "ray-x/lsp_signature.nvim"
 end)
 
