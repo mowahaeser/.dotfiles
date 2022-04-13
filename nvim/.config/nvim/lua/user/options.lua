@@ -1,6 +1,7 @@
 local options = {
+
     autoindent = true,
-    cindent = true,
+	cindent = true,
 	backup = false, -- creates a backup file
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 	cmdheight = 2, -- more space in the neovim command line for displaying messages
@@ -35,26 +36,25 @@ local options = {
 	scrolloff = 10, -- 10 lines above cursor 
 	sidescrolloff = 10,
 	guifont = "monospace:h17", -- the font used in graphical neovim applications
-    shada =  { "!", "'1000", "<50", "s10", "h" },
-    inccommand = "split",
-  	fileformats = {"unix", "dos"},
-    formatoptions = {
-      a = false, -- Auto formatting is BAD.
-      t = false, -- Don't auto format my code. I got linters for that.
-      c = true, -- In general, I like it when comments respect textwidth
-      q = true, -- Allow formatting comments w/ gq
-      o = false, -- O and o, don't continue comments
-      r = true, -- But do continue when pressing enter.
-      n = true, -- Indent past the formatlistpat, not underneath it.
-      j = true, -- Auto-remove comments if possible.
-      ["2"] = false -- I'm not in gradeschool anymore
-    },
-    joinspaces = false -- two spaces and grade school, we're done
+	shada =  { "!", "'1000", "<50", "s10", "h" },
+	inccommand = "split",
+	fileformats = {"unix", "dos"},
+	formatoptions = {
+        a = false, -- Auto formatting is BAD.
+        t = false, -- Don't auto format my code. I got linters for that.
+        c = true, -- In general, I like it when comments respect textwidth
+        q = true, -- Allow formatting comments w/ gq
+        o = false, -- O and o, don't continue comments
+        r = true, -- But do continue when pressing enter.
+        n = true, -- Indent past the formatlistpat, not underneath it.
+        j = true, -- Auto-remove comments if possible.
+        ["2"] = false -- I'm not in gradeschool anymore
+	},
+	joinspaces = false -- two spaces and grade school, we're done
 }
 
+-- interate over options
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd([[set iskeyword+=-]])

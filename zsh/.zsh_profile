@@ -14,5 +14,7 @@ export PATH=$PATH:/usr/local/go/bin
 # rust
 export PATH=$PATH:$HOME/.cargo/bin
 
-# it's not being found automatically somehow
+
+# create a script for this.
 export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin
+export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/go
