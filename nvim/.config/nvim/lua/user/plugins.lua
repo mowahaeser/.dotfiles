@@ -5,8 +5,12 @@ if not status_ok then
 end
 
 packer.startup(function(use)
-    use "savq/melange"
+    use "wbthomason/packer.nvim"
+    -- use "savq/melange"
+    -- use "cocopon/iceberg.vim"
+    use "morhetz/gruvbox"
 
+    use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
 
     use "neovim/nvim-lspconfig"
@@ -20,5 +24,8 @@ packer.startup(function(use)
     use "hrsh7th/nvim-cmp"
 
     use "ray-x/lsp_signature.nvim"
+
+    use "vim-airline/vim-airline"
+    use "vim-airline/vim-airline-themes"
 end)
 

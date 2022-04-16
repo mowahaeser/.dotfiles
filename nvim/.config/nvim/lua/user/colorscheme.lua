@@ -1,4 +1,4 @@
-local _COLORSCHEME_ = "melange"
+local _COLORSCHEME_ = "gruvbox"
 local _TRANSPARENT_ = true
 
 local enable_transparent_mode = function()
@@ -9,6 +9,7 @@ local enable_transparent_mode = function()
     vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi EndOfBuffer ctermbg=none guibg=none")
+    vim.cmd("highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE")
     vim.cmd("let &fcs='eob: '")
 end
 
@@ -21,3 +22,4 @@ if not status_ok then
 	vim.notify("colorscheme " .. _COLORSCHEME_ .. " not found!")
 	return
 end
+

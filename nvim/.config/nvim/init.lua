@@ -1,3 +1,5 @@
+vim.g.mapleader = ","
+
 require "user.options"
 require "user.telescope"
 require "user.lsp-setup"

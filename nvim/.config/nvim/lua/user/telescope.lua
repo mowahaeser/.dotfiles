@@ -72,7 +72,7 @@ require("telescope").setup {
         ["<c-g>s"] = actions.select_all,
         ["<c-g>a"] = actions.add_selection,
 
-        ["<c-space>"] = function(prompt_bufnr)
+        ["<c-leader>"] = function(prompt_bufnr)
           local opts = {
             callback = actions.toggle_selection,
             loop_callback = actions.send_selected_to_qflist,
@@ -161,7 +161,7 @@ require("telescope").setup {
     },
 
     -- frecency = {
-    --   workspaces = {
+    --   workleaders = {
     --     ["conf"] = "/home/tj/.config/nvim/",
     --     ["nvim"] = "/home/tj/build/neovim",
     --   },
@@ -175,46 +175,25 @@ local map_options = {
     silent = true,
 }
 
--- TODO: maybe create a function for managing this mappings.
-local map_handler = function(key, f, options, buff)
-end
-
--- Those use buff (Complete stuff)
-
-
 -- Files
-vim.api.nvim_set_keymap("n", "<space>ft", "git_files", map_options)
--- vim.api.nvim_set_keymap("n", "<space>fg", "live_grep")
-vim.api.nvim_set_keymap("n", "<space>fg", "multi_rg", map_options)
-vim.api.nvim_set_keymap("n", "<space>fo", "oldfiles", map_options)
-vim.api.nvim_set_keymap("n", "<space>fd", "fd", map_options)
-vim.api.nvim_set_keymap("n", "<space>fs", "fs", map_options)
-vim.api.nvim_set_keymap("n", "<space>pp", "project_search", map_options)
-vim.api.nvim_set_keymap("n", "<space>fv", "find_nvim_source", map_options)
-vim.api.nvim_set_keymap("n", "<space>fe", "file_browser", map_options)
-vim.api.nvim_set_keymap("n", "<space>fz", "search_only_certain_files", map_options)
+-- vim.api.nvim_set_keymap("n", "<leader>fg", "live_grep")
+vim.api.nvim_set_keymap("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", map_options)
 
--- Sourcegraph
-vim.api.nvim_set_keymap("n", "<space>sf", "sourcegraph_find", map_options)
-vim.api.nvim_set_keymap("n", "<space>saf", "sourcegraph_about_find", map_options)
-vim.api.nvim_set_keymap("n", "<space>sag", "sourcegraph_about_grep", map_options)
--- vim.api.nvim_set_keymap("n", '<space>fz', 'sourcegraph_tips')
+vim.api.nvim_set_keymap("n", "<leader>fd", "<cmd>Telescope fd<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>fs", "<cmd>Telescope fs<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>pp", "<cmd>Telescope project_search<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>fv", "<cmd>Telescope find_nvim_source<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>fe", "<cmd>Telescope file_browser<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>fz", "<cmd>Telescope search_only_certain_files<cr>", map_options)
 
 -- Git
-vim.api.nvim_set_keymap("n", "<space>gs", "git_status", map_options)
-vim.api.nvim_set_keymap("n", "<space>gc", "git_commits", map_options)
-
+vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>ft", "<cmd>Telescope git_files<cr>", map_options)
 -- Nvim
-vim.api.nvim_set_keymap("n", "<space>fb", "buffers", map_options)
-vim.api.nvim_set_keymap("n", "<space>fp", "my_plugins", map_options)
-vim.api.nvim_set_keymap("n", "<space>fa", "installed_plugins", map_options)
-vim.api.nvim_set_keymap("n", "<space>fi", "search_all_files", map_options)
-vim.api.nvim_set_keymap("n", "<space>ff", "curbuf", map_options)
-vim.api.nvim_set_keymap("n", "<space>fh", "help_tags", map_options)
-vim.api.nvim_set_keymap("n", "<space>bo", "vim_options", map_options)
-vim.api.nvim_set_keymap("n", "<space>gp", "grep_prompt", map_options)
-vim.api.nvim_set_keymap("n", "<space>wt", "treesitter", map_options)
+vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>bo", "<cmd>Telescope vim_options<cr>", map_options)
 
--- Telescope Meta
-vim.api.nvim_set_keymap("n", "<space>fB", "builtin", map_options)
+vim.api.nvim_set_keymap("n", "<leader>fB", "<cmd>Telescope builtin<cr>", map_options)
 
