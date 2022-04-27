@@ -8,7 +8,8 @@ packer.startup(function(use)
     use "wbthomason/packer.nvim"
     -- use "savq/melange"
     -- use "cocopon/iceberg.vim"
-    use "morhetz/gruvbox"
+    use "ayu-theme/ayu-vim"
+    -- use "morhetz/gruvbox"
 
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
@@ -22,6 +23,8 @@ packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp-document-symbol"
     use "hrsh7th/cmp-cmdline"
     use "hrsh7th/nvim-cmp"
+
+    use "L3MON4D3/LuaSnip"
 
     use "ray-x/lsp_signature.nvim"
 

@@ -1,4 +1,4 @@
-local _COLORSCHEME_ = "gruvbox"
+local _COLORSCHEME_ = "ayu"
 local _TRANSPARENT_ = true
 
 local enable_transparent_mode = function()
