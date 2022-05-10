@@ -11,6 +11,7 @@ packer.startup(function(use)
     use "ayu-theme/ayu-vim"
     -- use "morhetz/gruvbox"
 
+    use "nvim-treesitter/nvim-treesitter"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
 

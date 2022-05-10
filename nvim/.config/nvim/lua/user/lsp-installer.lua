@@ -67,6 +67,11 @@ lua_opts["gopls"] = {
 	},
 }
 
+lua_opts["tsserver"] = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
 require("nvim-lsp-installer").on_server_ready(function(server)
     print(server.name)
     server:setup(lua_opts[server.name] or {})
