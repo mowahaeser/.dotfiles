@@ -92,7 +92,7 @@ require("telescope").setup {
     },
 
     -- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    -- file_ignore_patterns = nil,
+    file_ignore_patterns = { "node_modules" },
 
     file_previewer = require("telescope.previewers").vim_buffer_cat.new,
     grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
@@ -185,6 +185,7 @@ vim.api.nvim_set_keymap("n", "<leader>pp", "<cmd>Telescope project_search<cr>", 
 vim.api.nvim_set_keymap("n", "<leader>fv", "<cmd>Telescope find_nvim_source<cr>", map_options)
 vim.api.nvim_set_keymap("n", "<leader>fe", "<cmd>Telescope file_browser<cr>", map_options)
 vim.api.nvim_set_keymap("n", "<leader>fz", "<cmd>Telescope search_only_certain_files<cr>", map_options)
+vim.api.nvim_set_keymap("n", "<leader>dt", "<cmd>Telescope diagnostics<cr>", map_options)
 
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", map_options)

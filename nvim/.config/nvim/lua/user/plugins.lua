@@ -8,8 +8,10 @@ packer.startup(function(use)
     use "wbthomason/packer.nvim"
     -- use "savq/melange"
     -- use "cocopon/iceberg.vim"
-    use "ayu-theme/ayu-vim"
+    -- use "ayu-theme/ayu-vim"
     -- use "morhetz/gruvbox"
+    use "katawful/kat.nvim"
+    use "vivkin/flatland.vim"
 
     use "nvim-treesitter/nvim-treesitter"
     use "nvim-lua/plenary.nvim"
