@@ -12,11 +12,8 @@ source $PERSONAL/aliases
 export PATH=$PATH:/usr/local/go/bin
 
 # rust
-export PATH=$PATH:$HOME/.cargo/bin
+ export PATH=$PATH:$HOME/.cargo/bin
 
 # JDK
-export PATH=$PATH:/usr/local/jdk/bin
+# export PATH=$PATH:/usr/local/jdk/bin
 
-# create a script for this.
-export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin
-export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/go

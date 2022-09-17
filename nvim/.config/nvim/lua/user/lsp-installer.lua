@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	buf_set_keymap("n", "<leader>ca", "<cmd>Telescope lsp_code_actions<CR>", opts)
 
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.document_formatting then
 		vim.cmd([[
 			augroup formatting
 				autocmd! * <buffer>
@@ -41,7 +41,7 @@ local on_attach = function(client, bufnr)
 	end
 
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.document_highlight then
 		vim.cmd([[
 			augroup lsp_document_highlight
 				autocmd! * <buffer>
