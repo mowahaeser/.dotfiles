@@ -29,12 +29,12 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>D", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 	buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	buf_set_keymap("n", "<leader>ca", "<cmd>Telescope lsp_code_actions<CR>", opts)
-
-    if client.server_capabilities.document_formatting then
+    
+    if client.server_capabilities.documentFormattingProvider then
 		vim.cmd([[
 			augroup formatting
 				autocmd! * <buffer>
-				autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+				autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
 				autocmd BufWritePre <buffer> lua OrganizeImports(1000)
 			augroup END
 		]])
