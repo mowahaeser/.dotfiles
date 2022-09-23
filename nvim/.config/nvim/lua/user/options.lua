@@ -1,5 +1,5 @@
 local options = {
-
+    autochdir = true,
     autoindent = true,
 	cindent = true,
 	backup = false, -- creates a backup file
