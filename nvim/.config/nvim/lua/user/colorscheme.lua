@@ -1,4 +1,4 @@
-local _COLORSCHEME_ = "kat.nwim"
+local _COLORSCHEME_ = "kat.nvim"
 local _TRANSPARENT_ = true
 
 local enable_transparent_mode = function()

@@ -3,14 +3,14 @@ if not status_ok then
     return
 end
 
-cmp.setup{
-    mapping = {
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-e>"] = cmp.mapping.close(),
         ["<C-y>"] = cmp.config.disabled,
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-    },
+    }),
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- For luasnip users.
@@ -30,7 +30,7 @@ cmp.setup{
             require("luasnip").lsp_expand(args.body)
         end,
     },
-}
+})
 
 -- native_menu option must be disable for this to work
 cmp.setup.cmdline("/", {

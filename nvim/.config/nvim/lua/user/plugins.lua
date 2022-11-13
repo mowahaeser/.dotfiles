@@ -11,14 +11,18 @@ packer.startup(function(use)
     -- use "ayu-theme/ayu-vim"
     -- use "morhetz/gruvbox"
     use "katawful/kat.nvim"
-    use "vivkin/flatland.vim"
+    use "nlknguyen/papercolor-theme"
+
 
     use "nvim-treesitter/nvim-treesitter"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
 
     use "neovim/nvim-lspconfig"
-    use "williamboman/nvim-lsp-installer"
+    use "williamboman/mason-lspconfig.nvim"
+    use "williamboman/mason.nvim"
+
+    -- use "williamboman/nvim-lsp-installer"
 
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-buffer"
@@ -33,5 +37,7 @@ packer.startup(function(use)
 
     use "vim-airline/vim-airline"
     use "vim-airline/vim-airline-themes"
+
+    use "/home/samuel/devenv/lua/stackmap.nvim"
 end)
 
