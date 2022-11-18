@@ -13,8 +13,6 @@ local on_attach = function(client, bufnr)
         }
     }, bufnr)
 
-    vim.notify(vim.inspect(client))
-
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
