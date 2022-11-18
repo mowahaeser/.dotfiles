@@ -6,12 +6,33 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
-    require "lsp_signature".on_attach(bufnr, {
+    require "lsp_signature".on_attach({
         bind = true, -- This is mandatory, otherwise border config won't get registered.
         handler_opts = {
             border = "rounded"
         }
-    })
+    }, bufnr)
+
+    vim.notify(vim.inspect(client))
+
+    local function buf_set_keymap(...)
+        vim.api.nvim_buf_set_keymap(bufnr, ...)
+    end
+
+    local opts = { noremap = true, silent = true }
+
+    buf_set_keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+    buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+
+    buf_set_keymap("n", "<C-j>", "<cmd>Telescope lsp_document_symbols<CR>", opts)
+    buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+
+    buf_set_keymap("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+    buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    buf_set_keymap("n", "<leader>D", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+    buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    buf_set_keymap("n", "<leader>ca", "<cmd>Telescope lsp_code_actions<CR>", opts)
 
     if client.server_capabilities.documentFormattingProvider then
         vim.cmd([[
@@ -60,7 +81,9 @@ lspconfig.sumneko_lua.setup({
 
 lspconfig.tsserver.setup({
     capabilities = capabilities,
-    on_attach = on_attach,
+    on_attach = function(client)
+        client.server_capabilities.document_formatting = false
+    end,
 })
 
 function OrganizeImports(timeoutms)
