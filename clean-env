@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# stoled from prime thx
+
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do

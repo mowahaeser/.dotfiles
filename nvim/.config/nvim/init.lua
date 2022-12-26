@@ -1,10 +1,9 @@
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
-require "user.options"
-require "user.telescope"
-require "user.lsp-setup"
-require "user.mason"
-require "user.complete"
-require "user.plugins"
-require "user.colorscheme"
-require "user.mappings"
+if require "mowanil.first_load" () then
+    return
+end
+
+require "mowanil.lsp-setup"
+require "mowanil.plugins"
+require "mowanil.mappings"

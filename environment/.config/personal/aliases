@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+alias personal="cd ~/.config/personal"
+alias devgo="cd ~/dev/go"
+alias devnode="cd ~/dev/node"
+alias szshrc="source ~/.zshrc"
+alias config="nvim ~/.config/nvim/lua"

@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="nvim,zsh,bash"
+    STOW_FOLDERS="nvim,zsh,environment"
 fi
 
 if [[ -z $DOTFILES ]]; then
