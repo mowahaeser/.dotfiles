@@ -40,7 +40,6 @@ local on_attach = function(client, bufnr)
 			augroup formatting
 				autocmd! * <buffer>
 				autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
-				autocmd BufWritePre <buffer> lua OrganizeImports(1000)
 			augroup END
 		]]     )
     end
@@ -67,7 +66,7 @@ require("mason").setup({
     }
 })
 
-local lsp_servers = { "sumneko_lua", "gopls", "tsserver" }
+local lsp_servers = { "lua_ls", "gopls", "tsserver" }
 
 require("mason-lspconfig").setup({
     ensure_installed = lsp_servers

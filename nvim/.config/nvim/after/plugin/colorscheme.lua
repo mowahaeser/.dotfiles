@@ -1,5 +1,5 @@
 local config = {
-    colorscheme = "gruvbox-material",
+    colorscheme = "kat.nvim",
     transparent = true,
 }
 

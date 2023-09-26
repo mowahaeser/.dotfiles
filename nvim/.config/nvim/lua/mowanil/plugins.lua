@@ -7,8 +7,8 @@ end
 packer.startup(function(use)
     use "wbthomason/packer.nvim"
 
-    -- use "katawful/kat.nvim"
-    use "sainnhe/gruvbox-material"
+    use "katawful/kat.nvim"
+    -- use "rebelot/kanagawa.nvim"
 
     use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
