@@ -10,6 +10,8 @@ packer.startup(function(use)
     use "katawful/kat.nvim"
     -- use "rebelot/kanagawa.nvim"
 
+    use "windwp/nvim-autopairs"
+    use "stevearc/oil.nvim"
     use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
 

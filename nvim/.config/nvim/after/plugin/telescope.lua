@@ -9,9 +9,7 @@ local action_layout = require "telescope.actions.layout"
 -- Consider moving this file out to my profile folder
 
 -- Telescope mappings
-vim.keymap.set("n", "<leader>en", require("telescope.builtin").find_files, {
-
-})
+vim.keymap.set("n", "<leader>en", require("telescope.builtin").find_files, {})
 
 -- Telescope setup
 require("telescope").setup {
@@ -153,7 +151,7 @@ require("telescope").setup {
     },
 }
 
---[[ 
+--[[
     kim.api.nvim_set_keymap("n", "<leader>gf", "<cmd>Telescope git_files<cr>", map_options)
 vim.api.nvim_set_keymap("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", map_options)
 
