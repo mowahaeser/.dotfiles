@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/samuel/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["codeium.nvim"] = {
+    loaded = true,
+    path = "/home/samuel/.local/share/nvim/site/pack/packer/start/codeium.nvim",
+    url = "https://github.com/Exafunction/codeium.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/samuel/.local/share/nvim/site/pack/packer/start/harpoon",

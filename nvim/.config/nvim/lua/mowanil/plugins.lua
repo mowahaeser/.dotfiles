@@ -8,7 +8,7 @@ packer.startup(function(use)
     use "wbthomason/packer.nvim"
 
     use "katawful/kat.nvim"
-    -- use "rebelot/kanagawa.nvim"
+    use "rebelot/kanagawa.nvim"
 
     use "windwp/nvim-autopairs"
     use "stevearc/oil.nvim"
@@ -27,6 +27,7 @@ packer.startup(function(use)
     use "williamboman/mason-lspconfig.nvim"
     use "williamboman/mason.nvim"
 
+    use "Exafunction/codeium.nvim"
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"

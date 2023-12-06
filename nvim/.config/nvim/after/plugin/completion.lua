@@ -10,20 +10,32 @@ cmp.setup({
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<C-y>"] = cmp.config.disabled,
-        ["<CR>"] = cmp.mapping.confirm({ select = true })
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<Tab>"] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end,
     }),
     sources = {
+        { name = "codeium" },
         { name = "path" },
         { name = "nvim_lua" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "nvim_lsp_document_symbol" },
-        { name = "buffer", keyword_length = 3 },
-    },
 
+        {
+            name = "buffer",
+            keyword_length = 5,
+        },
+    },
     experimental = {
         ghost_text = true,
-        native_menu = false,
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
     },
     snippet = {
         expand = function(args)
