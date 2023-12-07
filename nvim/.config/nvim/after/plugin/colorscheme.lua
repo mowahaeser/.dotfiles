@@ -11,8 +11,6 @@ local enable_transparent_mode = function()
     vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi EndOfBuffer ctermbg=none guibg=none")
-    vim.cmd("highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE")
-    vim.cmd("highlight LineNr guibg=NONE")
     vim.cmd("let &fcs='eob: '")
 end
 

@@ -14,6 +14,7 @@ packer.startup(function(use)
     use "stevearc/oil.nvim"
     use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
+    use "ggandor/leap.nvim"
 
     use "folke/zen-mode.nvim"
     use "folke/twilight.nvim"
@@ -22,6 +23,7 @@ packer.startup(function(use)
     use "norcalli/nvim-colorizer.lua"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
+    use "nvim-telescope/telescope-ui-select.nvim"
 
     use "neovim/nvim-lspconfig"
     use "williamboman/mason-lspconfig.nvim"
@@ -37,9 +39,7 @@ packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp-document-symbol"
 
     use "jose-elias-alvarez/null-ls.nvim"
-
     use "L3MON4D3/LuaSnip"
-
     use "ray-x/lsp_signature.nvim"
 
 
