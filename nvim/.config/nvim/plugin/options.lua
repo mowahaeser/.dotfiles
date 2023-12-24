@@ -40,17 +40,18 @@ local options = {
     inccommand = "split",
     fileformats = { "unix", "dos" },
     formatoptions = {
-        a = false,     -- Auto formatting is BAD.
-        t = false,     -- Don't auto format my code. I got linters for that.
-        c = true,      -- In general, I like it when comments respect textwidth
-        q = true,      -- Allow formatting comments w/ gq
-        o = false,     -- O and o, don't continue comments
-        r = true,      -- But do continue when pressing enter.
-        n = true,      -- Indent past the formatlistpat, not underneath it.
-        j = true,      -- Auto-remove comments if possible.
-        ["2"] = false  -- I'm not in gradeschool anymore
+        a = false,      -- Auto formatting is BAD.
+        t = false,      -- Don't auto format my code. I got linters for that.
+        c = true,       -- In general, I like it when comments respect textwidth
+        q = true,       -- Allow formatting comments w/ gq
+        o = false,      -- O and o, don't continue comments
+        r = true,       -- But do continue when pressing enter.
+        n = true,       -- Indent past the formatlistpat, not underneath it.
+        j = true,       -- Auto-remove comments if possible.
+        ["2"] = false   -- I'm not in gradeschool anymore
     },
-    joinspaces = false -- two spaces and grade school, we're done
+    joinspaces = false, -- two spaces and grade school, we're done
+    hidden = false
 }
 
 -- interate over options

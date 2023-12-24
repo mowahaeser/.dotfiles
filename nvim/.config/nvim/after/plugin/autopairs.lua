@@ -3,6 +3,6 @@ if not status_ok then
     return
 end
 
-npairs.setup({
+npairs.setup {
     check_ts = true,
-})
+}

@@ -1,9 +1,4 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-    return
-end
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
     require "lsp_signature".on_attach({
@@ -56,7 +51,9 @@ local on_attach = function(client, bufnr)
     end
 end
 
-require("mason").setup({
+require("neoconf").setup {}
+
+require("mason").setup {
     ui = {
         icons = {
             package_installed = "✓",
@@ -64,45 +61,79 @@ require("mason").setup({
             package_uninstalled = "✗"
         }
     }
-})
+}
 
-local lsp_servers = { "lua_ls", "gopls", "tsserver" }
+require("mason-lspconfig").setup {
+    ensure_installed = { "lua_ls", "gopls", "tsserver", "volar" }
+}
 
-require("mason-lspconfig").setup({
-    ensure_installed = lsp_servers
-})
+require("mason-lspconfig").setup_handlers {
+    function(server_name)
+        -- do not start lsp server if it's to be disabled
+        if require("neoconf").get(server_name .. ".disable") then
+            print(server_name .. "is disabled")
+            return
+        end
 
-for _, server in ipairs(lsp_servers) do
-    lspconfig[server].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-    })
-end
-
-lspconfig.emmet_language_server.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-
-lspconfig.gopls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    settings = {
-        gopls = {
-            gofumpt = true,
-        },
-    },
-    flags = {
-        debounce_text_changes = 150,
-    },
-})
-
-local use_null = true
-
-if use_null then
-    require("null-ls").setup({
-        sources = {
-            require("null-ls").builtins.formatting.prettierd,
+        require("lspconfig")[server_name].setup {
+            on_attach = on_attach,
+            capabilities = capabilities
         }
-    })
-end
+    end,
+
+    -- override with custom settings
+    ["cssls"] = function()
+        require("lspconfig").cssls.setup {
+            settings = {
+                css = {
+                    lint = {
+                        unknownAtRules = "ignore",
+                    },
+                },
+            },
+            capabilities = capabilities,
+            on_attach = on_attach,
+        }
+    end,
+    ["lua_ls"] = function()
+        require("lspconfig").lua_ls.setup {
+            capablities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
+
+        }
+    end,
+    ["gopls"] = function()
+        require("lspconfig").gopls.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                gopls = {
+                    gofumpt = true,
+                },
+            },
+            flags = {
+                debounce_text_changes = 150,
+            },
+        }
+    end
+}
+
+local null_ls = require("null-ls")
+
+local sources = {
+    -- null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.diagnostics.stylint,
+    -- null_ls.builtins.completion.luasnip,
+}
+
+null_ls.setup {
+    sources = sources
+}

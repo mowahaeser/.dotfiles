@@ -5,11 +5,13 @@ local config = {
 
 local enable_transparent_mode = function()
     vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
-    vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
+    vim.cmd("au ColorScheme * hi NormalFloat ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi NormalNC ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi MsgArea ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
+    vim.cmd("au ColorScheme * hi LineNr ctermbg=none guibg=none")
+    vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
     vim.cmd("au ColorScheme * hi EndOfBuffer ctermbg=none guibg=none")
     vim.cmd("let &fcs='eob: '")
 end
@@ -27,4 +29,4 @@ if not pcall(require, "nvim-colorizer") then
     return
 end
 
-require("colorizer").setup()
+require("colorizer").setup {}

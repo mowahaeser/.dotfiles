@@ -2,7 +2,7 @@ if not pcall(require, "zen-mode") then
     return
 end
 
-require("zen-mode").setup({
+require("zen-mode").setup {
     window = {
         backdrop = 1,
         width = 0.90,
@@ -15,9 +15,9 @@ require("zen-mode").setup({
             cursorline = false,
         },
     },
-})
+}
 
-require("twilight").setup({
+require("twilight").setup {
     context = -1,
     treesitter = true,
-})
+}
