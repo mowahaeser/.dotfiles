@@ -1,6 +1,8 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
+    vim.diagnostic.open_float()
+
     require "lsp_signature".on_attach({
         bind = true,
         hint_prefix = "🦀 ",
@@ -20,7 +22,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("K", vim.lsp.buf.hover, "Hover Documentation")
     buf_set_keymap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
     buf_set_keymap("D", vim.lsp.buf.type_definition, "Type [D]efinition")
-    buf_set_keymap("<leader>ds", require('telescope.builtin').lsp_document_symbols, "[D]ocument [S]ymbol")
+    buf_set_keymap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbol")
     buf_set_keymap("[d", vim.diagnostic.goto_next, "Goto Next Diagnostic")
     buf_set_keymap("]d", vim.diagnostic.goto_prev, "Goto Prev Diagnostic")
 
@@ -82,6 +84,13 @@ require("mason-lspconfig").setup_handlers {
     end,
 
     -- override with custom settings
+    ["emmet_language_server"] = function()
+        require("lspconfig").emmet_language_server.setup {
+            filetypes = { "php" },
+            capabilities = capabilities,
+            on_attach = on_attach,
+        }
+    end,
     ["cssls"] = function()
         require("lspconfig").cssls.setup {
             settings = {
@@ -128,12 +137,13 @@ require("mason-lspconfig").setup_handlers {
 local null_ls = require("null-ls")
 
 local sources = {
-    -- null_ls.builtins.formatting.prettierd,
-    null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.formatting.prettierd,
+    -- null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.diagnostics.stylint,
     -- null_ls.builtins.completion.luasnip,
 }
 
 null_ls.setup {
+    on_attach = on_attach,
     sources = sources
 }

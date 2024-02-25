@@ -14,6 +14,7 @@ vim.keymap.set("n", "<leader>d", require("telescope.builtin").diagnostics, {})
 
 require("telescope").setup {
     defaults = {
+        file_ignore_patterns = { ".git/", "node_modules" },
         layout_strategy = "horizontal",
         layout_config = {
             width = 0.90,
@@ -32,7 +33,14 @@ require("telescope").setup {
             }
         },
     },
-    pickers = {},
+    pickers = {
+        find_files = {
+            hidden = true,
+        },
+        file_browser = {
+            hidden = true,
+        }
+    },
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {

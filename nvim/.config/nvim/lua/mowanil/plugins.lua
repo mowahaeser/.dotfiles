@@ -48,6 +48,7 @@ packer.startup(function(use)
     use "L3MON4D3/LuaSnip"
     use "ray-x/lsp_signature.nvim"
 
+    use "diepm/vim-rest-console"
 
     use "vim-airline/vim-airline"
     use "vim-airline/vim-airline-themes"
